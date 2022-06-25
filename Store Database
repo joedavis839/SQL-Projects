@@ -1,0 +1,6 @@
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, sold INTEGER);
+
+INSERT INTO inventory VALUES (1, 'pedals', 10, 25, 10), (2, 'helmets', 8, 20, 9), (3, 'bikes', 100, 250, 13), (4, 'bells', 100, 5, 1000), (5, 'seats', 50, 25, 10), (6, 'water_bottles', 11, 25, 100), (7, 'shirts', 100, 50, 54), (8, 'shorts', 100, 50, 54), (9, 'handlebars', 17, 80, 50), (10, 'pegs', 80, 29, 50), (11, 'wheels', 30, 30, 24), (12, 'spokes', 50, 25, 900), (13, 'tires', 100, 58, 100), (14, 'compass', 15, 20, 12), (15, 'candy', 1000, 5, 68);
+
+SELECT * FROM inventory ORDER BY price;
+SELECT SUM(sold) FROM inventory;
