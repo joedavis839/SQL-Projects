@@ -1,0 +1,93 @@
+CREATE TABLE Musicians (id INTEGER PRIMARY KEY, name TEXT, Marital_status TEXT, Spouse_id TEXT);
+
+INSERT INTO Musicians VALUES
+(1, 'Beyonce', 'Married', '3');
+
+INSERT INTO Musicians (id, name, Marital_status) VALUES
+(2, 'Freddy Mercury', 'Not Married');
+
+INSERT INTO Musicians VALUES
+(3, 'Jay-z', 'Married', '1');
+
+INSERT INTO Musicians VALUES
+(4, 'Bruce Springsteen', 'Married', '6');
+
+INSERT INTO Musicians (id, name, Marital_status) VALUES
+(5, 'Blake Lively', 'Married');
+
+INSERT INTO Musicians VALUES
+(6, 'Patti Scialfa', 'Married', '4');
+
+INSERT INTO Musicians VALUES
+(7, 'Tim McGraw', 'Married', '15');
+
+INSERT INTO Musicians VALUES
+(8, 'Vince Gill', 'Married', '13');
+
+INSERT INTO Musicians VALUES
+(9, 'Joey Feek', 'Married', '14');
+
+INSERT INTO Musicians (id, name, Marital_status) VALUES
+(10, 'Taylor Swift', 'Single');
+
+INSERT INTO Musicians (id, name, Marital_status) VALUES
+(11, 'Kacey Musgraves', 'Single');
+
+INSERT INTO Musicians (id, name, Marital_status) VALUES
+(12, 'Dustin Lynch', 'Married');
+
+INSERT INTO Musicians VALUES
+(13, 'Amy Grant', 'Married', '8');
+
+INSERT INTO Musicians VALUES
+(14, 'Rory Lee Feek', 'Married', '9');
+
+INSERT INTO Musicians VALUES
+(15, 'Faith Hill', 'Married', '7');
+
+CREATE TABLE Music_genre (id INTEGER PRIMARY KEY, genre text);
+
+INSERT INTO Music_genre VALUES (1, 'R&B');
+
+INSERT INTO Music_genre VALUES (2, 'Rock');
+
+INSERT INTO Music_genre VALUES (3, 'Rap');
+
+INSERT INTO Music_genre VALUES (4, 'Rock');
+
+INSERT INTO Music_genre VALUES (5, 'Pop');
+
+INSERT INTO Music_genre VALUES (6, 'Pop');
+
+INSERT INTO Music_genre VALUES (7, 'Country');
+
+INSERT INTO Music_genre VALUES (8, 'Country');
+
+INSERT INTO Music_genre VALUES (9, 'Country');
+
+INSERT INTO Music_genre VALUES (10, 'Country');
+
+INSERT INTO Music_genre VALUES (11, 'Pop');
+
+INSERT INTO Music_genre VALUES (12, 'Country');
+
+INSERT INTO Music_genre VALUES (13, 'Country');
+
+INSERT INTO Music_genre VALUES (14, 'Country');
+
+INSERT INTO Music_genre VALUES (15, 'Country');
+
+/*I want to join the artists name and their genre of music using the musician id*/
+
+SELECT m.name, g.genre
+FROM Musicians m
+    JOIN
+    Music_genre g ON g.id = m.id;
+
+
+/*I want to do a self join to display the musician and their spouses name next to them*/
+
+SELECT ma.name, mb.name
+FROM Musicians ma
+    JOIN
+    Musicians mb ON ma.id = mb.Spouse_id;
