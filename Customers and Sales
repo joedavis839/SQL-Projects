@@ -61,4 +61,10 @@ SELECT COUNT(cust.acctnum) AS customers, AVG(quantity)*price AS average_revenue
     BIT_DB.customers cust ON cust.order_id = Feb.orderID
     WHERE Feb.Quantity > 2;
     
+/*List all the prodcuts sold in Los Angeles in February, and include how many of each were sold.*/
+
+SELECT product, SUM(quantity)
+FROM BIT_DB.FebSales
+WHERE FebSales.location like '%Los Angeles%'
+GROUP BY product;
 
